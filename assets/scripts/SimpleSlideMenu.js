@@ -7,14 +7,14 @@ SimpleSlideMenu = function(){};
 
 SimpleSlideMenu.prototype.init = function() {
     this.showMenu = false;
-    this.trigger = document.querySelector('.js_slide_menu__trigger');
-    this.openIcon = document.querySelector('.js_slide_menu__open-icon');
-    this.closeIcon = document.querySelector('.js_slide_menu__close-icon');
-    this.menu = document.querySelector('.js_slide_menu__nav');
-    this.menuOpenClass = 'js_slide_menu__open';
-    this.menuCloseTempClass = 'js_slide_menu__close';
-    this.bodyClass = 'js_slide_menu__body_on_open';
-    this.bodyTempClass = 'js_slide_menu__body_on_close';
+    this.trigger = document.querySelector('.simple_slide_menu__trigger');
+    this.openIcon = document.querySelector('.simple_slide_menu__open-icon');
+    this.closeIcon = document.querySelector('.simple_slide_menu__close-icon');
+    this.menu = document.querySelector('.simple_slide_menu__nav');
+    this.menuOpenClass = 'simple_slide_menu__open';
+    this.menuCloseTempClass = 'simple_slide_menu__close';
+    this.bodyClass = 'simple_slide_menu__body_on_open';
+    this.bodyTempClass = 'simple_slide_menu__body_on_close';
 
     this.createBodyOverlay();
     this.trigger.addEventListener('click', this.onClick.bind(this));
@@ -22,18 +22,18 @@ SimpleSlideMenu.prototype.init = function() {
 
 SimpleSlideMenu.prototype.createBodyOverlay = function(){
     var overlay = document.createElement('div');
-    overlay.classList.add('js_slide_menu__body_overlay');
+    overlay.classList.add('simple_slide_menu__body_overlay');
     document.body.appendChild(overlay);
 };
 
 SimpleSlideMenu.prototype.onClick = function(event){
     var element = event.target;
 
-    if (!element.classList.contains('js_slide_menu__trigger')) {
-        element = document.querySelector('.js_slide_menu__trigger');
+    if (!element.classList.contains('simple_slide_menu__trigger')) {
+        element = document.querySelector('.simple_slide_menu__trigger');
     }
 
-    var targetCloseIcon = element.querySelector('.js_slide_menu__close-icon');
+    var targetCloseIcon = element.querySelector('.simple_slide_menu__close-icon');
 
     if(targetCloseIcon.style.display === 'none') {
         this.showMenu = true;

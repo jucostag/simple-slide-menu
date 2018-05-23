@@ -1,4 +1,4 @@
-.js_slide_menu
+.simple_slide_menu
     &__nav
         background-color: #606060
         box-shadow: inset -2px 0px 20px 0px rgba(51, 51, 51, 0.8)
@@ -36,6 +36,7 @@
         display: none
         width: 100%
         height: 100%
+        top: 0
         position: fixed
         z-index: 5
 
@@ -53,5 +54,9 @@
         @media screen and (max-width: 604px)
             margin-left: 220px
 
-        .js_slide_menu__body_overlay
+        .simple_slide_menu__body_overlay
             display: flex
+
+        .simple_slide_menu__trigger
+            position: fixed
+            z-index: 5
