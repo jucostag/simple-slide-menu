@@ -1,6 +1,6 @@
-#Simple Slide Menu
+# Simple Slide Menu
 
-##Getting started
+## Getting started
 
 Clone this repository, and add the minified CSS and JS inside **dist/** directory to your project.
 
