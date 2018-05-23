@@ -1,18 +1,13 @@
-@-webkit-keyframes slide
-    100%
-        left: 0
-
-@keyframes slide
-    100% 
-        left: 0
-    
+body
+    margin-left: 0
+        
 .simple_slide_menu
     &__nav
         background-color: #606060
         box-shadow: inset -2px 0px 20px 0px rgba(51, 51, 51, 0.8)
         display: flex
         flex-direction: column
-        visibility: hidden        
+        visibility: hidden
         width: 350px
         height: 100vh
         padding: 1.5rem
@@ -20,10 +15,6 @@
         top: 0
         left: -350px
         z-index: 6
-        -webkit-animation: slide 0.5s forwards
-        -webkit-animation-delay: 2s
-        animation: slide 0.5s forwards
-        animation-delay: 2s
         @media screen and (max-width: 604px)
             width: 220px
             left: -220px            
@@ -31,12 +22,12 @@
     &__open
         visibility: visible
         left: 0
-        transition: 0.6s
+        transition: 0.8s
 
     &__close
         visibility: visible
-        margin-left: -350px
-        transition: 0.5s
+        left: -350px
+        transition: 0.6s
         @media screen and (max-width: 604px)
             margin-left: -220px
 
@@ -45,7 +36,7 @@
 
     &__body_on_close
         margin-left: 0
-        transition: 0.5s            
+        transition: 0.5s
 
     &__body_on_open
         margin-left: 350px
