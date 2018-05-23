@@ -1,0 +1,36 @@
+{
+  "name": "simple-slide-menu",
+  "version": "1.0.0",
+  "description": "Simple menu, which opens by pushing the body to the left.",
+  "main": "index.js",
+  "scripts": {
+    "build-task:js:compress": "uglifyjs-folder assets/scripts -o dist/simpleSlideMenu.min.js",
+    "build-task:sass:compress": "node-sass-chokidar --output-style compressed assets/sass/ -o dist/",
+    "build-task:sass:cssnext": "postcss -u postcss-cssnext -o dist/simpleSlideMenu.min.css dist/style.css",
+    "sass:build": "npm-run-all -p build-task:sass:* && rm -f dist/style.css",
+    "sass:watch": "chokidar 'assets/sass/**/*.sass' -c 'npm run sass:build'",
+    "js:build": "npm-run-all -p build-task:js:*",
+    "js:watch": "chokidar 'assets/scripts/**/*.js' -c 'npm run js:build'",
+    "watch": "npm-run-all -p js:* | npm-run-all -p sass:*",
+    "postinstall": "npm run sass:build && npm run js:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jucostag/simple-slide-menu"
+  },
+  "keywords": [
+    "menu",
+    "slider-menu",
+    "left-menu"
+  ],
+  "author": "Juliana Gonçalves",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0",
+    "postcss-cssnext": "^3.1.0",
+    "uglifyjs-folder": "^1.5.1"
+  }
+}
